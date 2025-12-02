@@ -1,6 +1,6 @@
-export default function Movie({movie}) {
+export default function Movie({ movie }) {
   const genreclass = "fs-6 " + `${movie.genre}`;
-  return(
+  return (
     <div className="card col-5 mb-2">
       <h2 className="card-title border-bottom">{movie.title}</h2>
       <p className={genreclass}>Genere: {movie.genre}</p>

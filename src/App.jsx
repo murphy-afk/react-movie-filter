@@ -29,18 +29,18 @@ function App() {
           <select name="genre" id="genre-select" className='form-select' aria-label='Filtra per genre'
             onChange={(event) => { setGenre(event.target.value) }}>
             {movieList.map((movie, index) =>
-            <Option  key={index}
-            movie={movie}/>
+              <Option key={index}
+                movie={movie} />
             )}
           </select>
           <label htmlFor="genre-select">Filtra per genre</label>
         </div>
         <div className='movie-container mt-5 row justify-content-evenly'>
-          {genre !== '' && <p className='border-bottom border-dark'>Film trovati: {movieNum}</p>}
+          {genre !== '' && <p className='border-bottom border-dark fs-4 text-center'>Film trovati: {movieNum}</p>}
           {movies.map((movie, index) =>
             <Movie
-            key={index}
-            movie={movie}
+              key={index}
+              movie={movie}
             />
           )}
         </div>
