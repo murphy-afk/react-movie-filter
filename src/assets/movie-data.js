@@ -7,4 +7,4 @@ const movies = [
   { title: 'Pulp Fiction', genre: 'Thriller' },
 ];
 
-export { movies }\
+export { movies }
