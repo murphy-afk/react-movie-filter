@@ -10,6 +10,7 @@ function App() {
   const [genre, setGenre] = useState('');
   const [movies, setMovies] = useState(movieList);
   const [movieNum, setMovieNum] = useState(1);
+
   useEffect(() => {
     console.log("I'm happening");
     const filteredMovies = movieList.filter(movie => movie.genre === genre);
@@ -34,7 +35,7 @@ function App() {
           </select>
           <label htmlFor="genre-select">Filtra per genre</label>
         </div>
-        <div className='movie-container mt-5'>
+        <div className='movie-container mt-5 row justify-content-evenly'>
           {genre !== '' && <p className='border-bottom border-dark'>Film trovati: {movieNum}</p>}
           {movies.map((movie, index) =>
             <Movie
