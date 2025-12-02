@@ -1,17 +1,29 @@
 import { useState } from 'react'
-import { movies } from './assets/movie-data'
+import { movieList } from './assets/movie-data'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
+
+
+
 function App() {
   const [genre, setGenre] = useState('');
+  const [movies, setMovies] = useState(movieList)
+
+  // LOGIC:
+  // const filteredMovies = movies.filter(movie => movie.genre === genre);
+  // setMovies(filteredMovies)
+
   return (
     <>
       <div className="container">
         <h1>Movies</h1>
         <label htmlFor="genre-select" className='form-label'>Filtra per genre</label>
         <select name="genre" id="genre-select" className='form-control' 
-        onChange={(event) => setGenre(event.target.value)}>
+        onChange={(event) => {
+            filterMovies
+            setGenre(event.target.value)
+  }}>
           {movies.map((movie, index) =>
             <option value={movie.genre} key={index}>{movie.genre}</option>
           )}
