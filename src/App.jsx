@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { movieList } from './assets/movie-data'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
@@ -10,9 +10,10 @@ function App() {
   const [genre, setGenre] = useState('');
   const [movies, setMovies] = useState(movieList)
 
-  // LOGIC:
-  // const filteredMovies = movies.filter(movie => movie.genre === genre);
-  // setMovies(filteredMovies)
+  useEffect(() => {
+    const filteredMovies = movieList.filter(movie => movie.genre === genre);
+    setMovies(filteredMovies)
+  }, [genre])
 
   return (
     <>
@@ -20,11 +21,8 @@ function App() {
         <h1>Movies</h1>
         <label htmlFor="genre-select" className='form-label'>Filtra per genre</label>
         <select name="genre" id="genre-select" className='form-control' 
-        onChange={(event) => {
-            filterMovies
-            setGenre(event.target.value)
-  }}>
-          {movies.map((movie, index) =>
+        onChange={(event) => {setGenre(event.target.value)}}>
+          {movieList.map((movie, index) =>
             <option value={movie.genre} key={index}>{movie.genre}</option>
           )}
         </select>
