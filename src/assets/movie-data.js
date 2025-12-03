@@ -6,5 +6,13 @@ const movieList = [
   { title: 'Interstellar', genre: 'Fantascienza' },
   { title: 'Pulp Fiction', genre: 'Thriller' },
 ];
+const genres = [];
+movieList.forEach(movie => {
+  if (genres.includes(movie.genre) === false) {
+    genres.push(movie.genre)
+  }
+});
 
-export { movieList }
+
+
+export { movieList, genres }

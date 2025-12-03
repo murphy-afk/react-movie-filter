@@ -1,5 +1,5 @@
-export default function Option({ movie }) {
+export default function Option({ genre }) {
   return (
-    <option value={movie.genre}>{movie.genre}</option>
+    <option value={genre}>{genre}</option>
   )
 }
